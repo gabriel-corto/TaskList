@@ -1,22 +1,18 @@
 
-import Input from './Input'
 import { Check } from 'phosphor-react'
 
 import styles from './Form.module.css'
 import { FormEventHandler } from 'react'
 
 type formProps = {
-  onSaveTask: FormEventHandler
+  onSaveTask: FormEventHandler,
+  children: React.ReactNode
 }
 
-export default function Form({ onSaveTask }: formProps) {
+export default function Form({ onSaveTask, children}: formProps) {
   return (
     <form action='#' className={styles.form} onSubmit={onSaveTask}>
-      <Input 
-        Name='task'
-        Type='text'
-        PlaceHolder='Add new task...'
-      />
+      { children }
       <button> <Check weight='bold' /> Add</button>
     </form>
   )
