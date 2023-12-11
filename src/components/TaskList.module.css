@@ -2,6 +2,9 @@
 .tasks {
   margin-top: 2rem;
   list-style: none;
+
+  display: grid;
+  gap: .7rem;
 }
 .tasks > li {
   width: 100%;

@@ -9,6 +9,14 @@ export default function TaskList() {
         <strong>Learn React js </strong>
         <button> <Trash size={18} weight='bold' /> </button>
       </li>
+      <li>
+        <strong>Learn React js </strong>
+        <button> <Trash size={18} weight='bold' /> </button>
+      </li>
+      <li>
+        <strong>Learn React js </strong>
+        <button> <Trash size={18} weight='bold' /> </button>
+      </li>
     </ul>
   )
 }
