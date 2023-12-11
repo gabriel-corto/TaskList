@@ -1,0 +1,33 @@
+
+.tasks {
+  margin-top: 2rem;
+  list-style: none;
+}
+.tasks > li {
+  width: 100%;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  color: #334;
+  background: #e1e1f9;
+  border-radius: 8px;
+}
+.tasks strong {
+  margin-left: 9px;
+}
+.tasks button {
+  color: #dc143c;
+  background: white;
+
+  padding: 7px;
+  border-radius: 8px;
+  border: 1px solid #dc143c;
+  transition: all .3s;
+}
+.tasks button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
