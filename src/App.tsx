@@ -1,5 +1,5 @@
 
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, EventHandler, FormEvent, useState } from "react";
 
 import Form from "./components/Form";
 import TaskList from "./components/TaskList";
@@ -12,6 +12,7 @@ export default function App() {
   const [Text, setNewText] = useState("")
   const [Tasks, setNewTask] = useState <string[]> ([])
   const [isTextEmpty, setIsTextEmpty] = useState(true)
+  const [Message, setMessage] = useState("")
 
   function handleSaveTask(event: FormEvent) {
     event.preventDefault()
@@ -27,6 +28,14 @@ export default function App() {
 
   function handleNewText(event: ChangeEvent<HTMLInputElement>) {
     setNewText(event.target.value)
+  }
+
+  function handleDeleteTask(Task: string){
+
+    const TasksNotDeleted = Tasks.filter((TaskToDelete) => {
+      return Task !== TaskToDelete
+    })
+    setNewTask(TasksNotDeleted)
   }
 
   return (
@@ -54,7 +63,7 @@ export default function App() {
           return(
             <li key={Task}>
               <strong>{Task}</strong>
-              <button> <Trash size={18} weight='bold' /> </button>
+              <button onClick={() => handleDeleteTask(Task)}> <Trash size={18} weight='bold' /> </button>
             </li>
           )
         })}
