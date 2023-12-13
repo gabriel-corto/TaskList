@@ -5,14 +5,14 @@ import Form from "./components/Form";
 import TaskList from "./components/TaskList";
 
 import styles from './components/Form.module.css'
-import { Trash, Warning } from "phosphor-react";
+import { Check, Trash, Warning } from "phosphor-react";
 
 export default function App() {
 
   const [Text, setNewText] = useState("")
   const [Tasks, setNewTask] = useState <string[]> ([])
   const [isTextEmpty, setIsTextEmpty] = useState(true)
-  const [Message, setMessage] = useState("")
+  const [Message, setMessage] = useState(false)
 
   function handleSaveTask(event: FormEvent) {
     event.preventDefault()
@@ -36,6 +36,7 @@ export default function App() {
       return Task !== TaskToDelete
     })
     setNewTask(TasksNotDeleted)
+    setMessage(true)
   }
 
   return (
@@ -45,7 +46,10 @@ export default function App() {
       </header>
 
       <div className={isTextEmpty ? "error" : "success"}>
-         <Warning /> {isTextEmpty ? "please fill in the empty field" : "Success"}
+         {isTextEmpty ? <p>{<Warning weight="bold" size={22} />} please fill in the empty field</p>  : <p>{<Check weight="bold" size={22}/>} please fill in the empty field</p>}
+      </div>
+      <div className={Message ? "message" : ""}>
+        {Message &&  <p><Warning weight="bold" size={22} /> One Task Removed</p> }
       </div>
 
       <Form  onSaveTask={handleSaveTask} >  
