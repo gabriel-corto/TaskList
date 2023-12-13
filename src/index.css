@@ -33,3 +33,49 @@ header h1 {
   font-family: 'Open Sans';
   color: #334;
 }
+
+.message {
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  text-align: center;
+  
+  font-size: .9rem;
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error {
+  color: #dc143c;
+  background: #ffd7df;
+
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  text-align: center;
+  
+  font-size: .9rem;
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success {
+  color: #36a672;
+  background: #d0ffe9;
+
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  text-align: center;
+  
+  font-size: .9rem;
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
