@@ -46,7 +46,7 @@ export default function App() {
       </header>
 
       <div className={isTextEmpty ? "error" : "success"}>
-         {isTextEmpty ? <p>{<Warning weight="bold" size={22} />} please fill in the empty field</p>  : <p>{<Check weight="bold" size={22}/>} please fill in the empty field</p>}
+         {isTextEmpty ? <p>{<Warning weight="bold" size={22} />} Please fill in the empty field</p>  : <p>{<Check weight="bold" size={22}/>} new Task Added !</p>}
       </div>
       <div className={Message ? "message" : ""}>
         {Message &&  <p><Warning weight="bold" size={22} /> One Task Removed</p> }
